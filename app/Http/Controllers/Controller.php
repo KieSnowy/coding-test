@@ -21,17 +21,6 @@ class Controller extends BaseController
 
     public function addRecord()
     {        
-
-        $newRecords = Personnel::create([
-            'reference' => Request::input('ref'),
-            'forename' => Request::input('forename'),
-            'surname' => Request::input('surname'),
-            'email' => Request::input('email'),
-            'phone' => Request::input('phone'),
-        ]);
-
-        return $newRecords;
-
         $newRecords = [[Request::input('ref'), Request::input('forename'), Request::input('surname'), Request::input('email'), Request::input('phone')]];
         $csvFile = fopen("test.csv", "a");
         
